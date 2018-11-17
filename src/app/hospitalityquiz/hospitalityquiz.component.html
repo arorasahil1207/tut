@@ -1,0 +1,26 @@
+<h1> There are total {{count}} Questions </h1>
+<div class="card">
+  <div class="card-body">
+    <!-- <<div *ngIf="responses" class="form-group form-check">> -->
+        <div *ngIf="perquestion" class="form-group form-check" >
+            <p>{{"Question"+ " " + perquestion.question}}</p>
+       
+         <input type="radio" [value]= "perquestion.option1" name="option" *ngIf ="perquestion.option1" (change)="onSelectionChange(perquestion.option1)" [(ngModel)]="useranswer" > {{perquestion.option1}}
+         <br>
+       <input type="radio"  [value]= "perquestion.option2" name="option"  *ngIf ="perquestion.option2"(change)="onSelectionChange(perquestion.option2)" [(ngModel)]="useranswer"  > {{perquestion.option2}}
+       <br>
+       <input type="radio"  [value]= "perquestion.option3" name="option" *ngIf ="perquestion.option3" (change)="onSelectionChange(perquestion.option3)" [(ngModel)]="useranswer"  > {{perquestion.option3}}
+       <br>
+       <input type="radio" [value]= "perquestion.option4" name="option" *ngIf ="perquestion.option4"  (change)="onSelectionChange(perquestion.option4)" [(ngModel)]="useranswer" > {{perquestion.option4}}
+       
+                
+           
+           </div>
+
+    </div>
+  <!-- </div> -->
+</div>
+
+<button (click)="nextQuestion()">Save Answer </button>
+<button (click)="submit()">Submit </button>
+<br>
